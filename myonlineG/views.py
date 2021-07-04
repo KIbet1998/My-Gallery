@@ -3,11 +3,11 @@ from .models import Category
 
 # Create your views here.
 def gallery(request):
-    category = request.GET.get('category_name')
+    category = request.GET.get('category')
     if category==None:
         photos=Image.objects.all()
     else:
-        photos=Image.objects.filter(category_name__name=category)
+        photos=Image.objects.filter(category__name=category)
     categories= Category.objects.all()
     context= {'categories':categories, 'photos':photos}
     
@@ -42,3 +42,17 @@ def addPhoto(request):
 
     context= {'categories':categories}
     return render(request,'add.html',context)
+
+def search_results(request):
+
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+    
+        searched_category = Category.search_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"category": searched_category})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})

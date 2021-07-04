@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{% block content%}
+<div class="container">
+    <div class="row ">
+        <div class="col-md-5" style="background-color: rgb(207, 220, 223);">
+            <a class="btn btn-dark my-3" href="{% url 'gallery'%}">Back</a>
+            <div class="" style="height: auto;">
+                <img style="max-width: 100%; min-height: 60%;" src="{{photo.image.url}}" alt="image-cap">
+                <p>
+                    <h1>Description</h1>
+                    {{photo.description}}
+                </p>
+               <h6 style="margin-right:3%;">Category:<i>{{photo.category.category}}</i></h6> 
+               {{photo.category.location}}
+                <div class="col-md-4">
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

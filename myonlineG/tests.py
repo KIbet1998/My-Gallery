@@ -17,4 +17,11 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images) > 0)
 
-        
+
+     # Testing delete Method
+    def test_delete_method(self):
+        self.office.save_image()
+        record = Image.objects.all()
+        self.office.delete_image()
+        self.assertTrue(len(record)== 0)
+

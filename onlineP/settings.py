@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myonlineG'
+    'myonlineG',
+    'bootstrap3'
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media'
             ],
         },
     },
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'onlineP.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myonlineG',
+        'NAME': 'pictures',
         'USER': 'moringa',
     'PASSWORD':'access',
     }
@@ -126,3 +128,12 @@ TIME_ZONE = 'Africa/Nairobi'
 
 
 STATIC_URL = '/static/'
+
+
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, "static"),
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

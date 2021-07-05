@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Category
+from .models import Category,Image,Location
 
 # Create your views here.
 def gallery(request):
@@ -7,7 +7,7 @@ def gallery(request):
     if category==None:
         photos=Image.objects.all()
     else:
-        photos=Image.objects.filter(category__name=category)
+        photos=Image.objects.filter(category__category=category)
     categories= Category.objects.all()
     context= {'categories':categories, 'photos':photos}
     

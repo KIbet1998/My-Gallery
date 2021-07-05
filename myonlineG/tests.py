@@ -9,3 +9,12 @@ class ImageTestClass(TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.office,Image))
+
+
+    # Testing Save Method
+    def test_save_method(self):
+        self.office.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
+
+        

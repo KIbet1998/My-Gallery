@@ -13,7 +13,7 @@ This is my website that is displaying my online gallery where users can view my 
 There are no bugs.
 ## Technologies Used
 Technologies used are;
-PYTHON
+PYTHON(Django)
 ## Support and contact details
 {If you ran into a bug or a problem in the website,kindly send a message via the email in my github account.}
 ### BDD

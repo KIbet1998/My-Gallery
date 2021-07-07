@@ -1,1 +1,1 @@
-web: gunicorn myonlineG.wsgi --log-file -
+web: gunicorn onlineP.wsgi --log-file -
